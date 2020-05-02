@@ -25,7 +25,9 @@ export default class CreateTransactions1588279506325
           },
           {
             name: 'value',
-            type: 'numeric',
+            type: 'decimal',
+            precision: 10,
+            scale: 2,
           },
           {
             name: 'type',
@@ -34,6 +36,7 @@ export default class CreateTransactions1588279506325
           {
             name: 'category_id',
             type: 'uuid',
+            isNullable: true,
           },
           {
             name: 'created_at',
@@ -56,6 +59,7 @@ export default class CreateTransactions1588279506325
         referencedColumnNames: ['id'],
         referencedTableName: 'categories',
         onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
       }),
     );
   }
